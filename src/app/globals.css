@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+    --primary: 246 82% 31%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 145 100% 45%;
+    --secondary-foreground: 240 10% 10%;
+    --muted: 240 5% 93%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 246 82% 95%;
+    --accent-foreground: 246 82% 31%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 246 82% 31%;
+    --chart-1: 246 82% 31%;
+    --chart-2: 145 100% 45%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 0 60% 35%;
+    --radius: 0.75rem;
+    --somaq-blue: #1B0F8E;
+    --somaq-green: #00E676;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}

@@ -1,0 +1,391 @@
+[
+  {
+    "categoria": "Betoneiras",
+    "equipamentos": [
+      {
+        "nome": "Betoneira 150L",
+        "itensVerificacao": ["Motor funcionando", "Coroa e pinhão", "Tambor sem trincas", "Pedal de acionamento", "Carenagem/proteção", "Pneus/rodas", "Cabo de energia", "Chave liga/desliga"]
+      },
+      {
+        "nome": "Betoneira 200L",
+        "itensVerificacao": ["Motor funcionando", "Coroa e pinhão", "Tambor sem trincas", "Pedal de acionamento", "Carenagem/proteção", "Pneus/rodas", "Cabo de energia", "Chave liga/desliga"]
+      },
+      {
+        "nome": "Betoneira 400L",
+        "itensVerificacao": ["Motor funcionando", "Coroa e pinhão", "Tambor sem trincas", "Pedal de acionamento", "Carenagem/proteção", "Pneus/rodas", "Cabo de energia", "Chave liga/desliga", "Chassi/estrutura"]
+      }
+    ]
+  },
+  {
+    "categoria": "Marteletes / Rompedores",
+    "equipamentos": [
+      {
+        "nome": "Martelete / Martelo Rompedor 5 kg",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Mandril/encaixe SDS", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Trava de segurança", "Maleta/case", "Ponteira/talhadeira"]
+      },
+      {
+        "nome": "Martelete / Martelo Rompedor 10 kg",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Mandril/encaixe SDS", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Trava de segurança", "Maleta/case", "Ponteira/talhadeira"]
+      },
+      {
+        "nome": "Martelete / Martelo Rompedor 16 kg",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Encaixe sextavado", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Trava de segurança", "Ponteira/talhadeira", "Molas de amortecimento"]
+      },
+      {
+        "nome": "Martelete / Martelo Rompedor 19 kg",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Encaixe sextavado", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Trava de segurança", "Ponteira/talhadeira", "Molas de amortecimento"]
+      },
+      {
+        "nome": "Martelete / Martelo Rompedor 27 kg",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Encaixe sextavado", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Trava de segurança", "Ponteira/talhadeira", "Molas de amortecimento", "Carrinho de transporte"]
+      },
+      {
+        "nome": "Martelete / Martelo Rompedor 14 kg a óleo",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Nível de óleo", "Encaixe sextavado", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Ponteira/talhadeira"]
+      },
+      {
+        "nome": "Martelete / Martelo Rompedor S26 Plus",
+        "itensVerificacao": ["Motor funcionando", "Percussão", "Encaixe SDS", "Cabo de energia", "Punho/empunhadura", "Gatilho", "Trava de segurança", "Maleta/case", "Ponteira/talhadeira"]
+      }
+    ]
+  },
+  {
+    "categoria": "Compactadores",
+    "equipamentos": [
+      {
+        "nome": "Compactador de Solo gasolina",
+        "itensVerificacao": ["Motor funcionando", "Nível de óleo", "Sapata de compactação", "Sistema de vibração", "Acelerador", "Filtro de ar", "Tanque de combustível", "Puxador/guia"]
+      },
+      {
+        "nome": "Compactador de Solo elétrico",
+        "itensVerificacao": ["Motor funcionando", "Sapata de compactação", "Sistema de vibração", "Cabo de energia", "Chave liga/desliga", "Puxador/guia"]
+      }
+    ]
+  },
+  {
+    "categoria": "Lavadoras",
+    "equipamentos": [
+      {
+        "nome": "Lavadora de Alta Pressão 220V",
+        "itensVerificacao": ["Motor funcionando", "Mangueira de alta pressão", "Pistola/gatilho", "Lança/bico", "Cabo de energia", "Entrada de água", "Filtro de água", "Vedações/conexões"]
+      }
+    ]
+  },
+  {
+    "categoria": "Andaimes e Acessórios",
+    "equipamentos": [
+      {
+        "nome": "Andaime Tubular 100x150 cm",
+        "itensVerificacao": ["Estrutura sem deformações", "Travessas/cruzetas", "Pinos de encaixe", "Soldas íntegras", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Andaime Tubular 100x100 cm",
+        "itensVerificacao": ["Estrutura sem deformações", "Travessas/cruzetas", "Pinos de encaixe", "Soldas íntegras", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Andaime Tubular 100x100 cm (aquartel)",
+        "itensVerificacao": ["Estrutura sem deformações", "Travessas/cruzetas", "Pinos de encaixe", "Soldas íntegras", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Piso Metálico para Andaime 37x150 cm",
+        "itensVerificacao": ["Superfície sem deformações", "Ganchos de fixação", "Sem ferrugem excessiva", "Antiderrapante"]
+      },
+      {
+        "nome": "Piso Metálico para Andaime 32x100 cm",
+        "itensVerificacao": ["Superfície sem deformações", "Ganchos de fixação", "Sem ferrugem excessiva", "Antiderrapante"]
+      },
+      {
+        "nome": "Rodízio Giratório c/ Freio para Andaime",
+        "itensVerificacao": ["Roda girando livremente", "Freio funcionando", "Encaixe/pino", "Sem deformações"]
+      },
+      {
+        "nome": "Sapata Ajustável para Andaime",
+        "itensVerificacao": ["Rosca funcionando", "Base/placa", "Sem deformações", "Encaixe no andaime"]
+      },
+      {
+        "nome": "Escada para Andaime 100 cm",
+        "itensVerificacao": ["Degraus íntegros", "Ganchos de fixação", "Sem deformações", "Soldas íntegras"]
+      },
+      {
+        "nome": "Escada para Andaime 200 cm",
+        "itensVerificacao": ["Degraus íntegros", "Ganchos de fixação", "Sem deformações", "Soldas íntegras"]
+      },
+      {
+        "nome": "Duto de Entalho 1,3 m x 42 cm",
+        "itensVerificacao": ["Sem trincas", "Encaixes íntegros", "Sem deformações"]
+      },
+      {
+        "nome": "Duto de Entalho 1,3 m x 38 cm",
+        "itensVerificacao": ["Sem trincas", "Encaixes íntegros", "Sem deformações"]
+      }
+    ]
+  },
+  {
+    "categoria": "Escoras e Cruzetas",
+    "equipamentos": [
+      {
+        "nome": "Escora Metálica 200-320 cm média",
+        "itensVerificacao": ["Rosca/regulagem funcionando", "Tubo sem amassados", "Pino de trava", "Base/placa inferior", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Escora Metálica 230-400 cm forne",
+        "itensVerificacao": ["Rosca/regulagem funcionando", "Tubo sem amassados", "Pino de trava", "Base/placa inferior", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Cruzeta para Escoramento",
+        "itensVerificacao": ["Sem deformações", "Encaixes/furos", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Tripé Metálico para Escora",
+        "itensVerificacao": ["Pernas sem deformações", "Encaixe da escora", "Soldas íntegras", "Estabilidade"]
+      }
+    ]
+  },
+  {
+    "categoria": "Sunchos de Coluna / Guinchos de Coluna",
+    "equipamentos": [
+      {
+        "nome": "Suncho de Coluna 200 kg",
+        "itensVerificacao": ["Estrutura sem deformações", "Cabo de aço", "Catraca/freio", "Gancho", "Soldas íntegras"]
+      },
+      {
+        "nome": "Suncho de Coluna 450 kg",
+        "itensVerificacao": ["Estrutura sem deformações", "Cabo de aço", "Catraca/freio", "Gancho", "Soldas íntegras"]
+      },
+      {
+        "nome": "Guincho de Coluna 200 kg",
+        "itensVerificacao": ["Motor funcionando", "Cabo de aço", "Freio", "Gancho", "Cabo de energia", "Chave liga/desliga"]
+      },
+      {
+        "nome": "Guincho de Coluna 450 kg",
+        "itensVerificacao": ["Motor funcionando", "Cabo de aço", "Freio", "Gancho", "Cabo de energia", "Chave liga/desliga"]
+      }
+    ]
+  },
+  {
+    "categoria": "Serras",
+    "equipamentos": [
+      {
+        "nome": "Serra Mármore",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Cabo de energia", "Gatilho", "Trava do eixo", "Base/sapata"]
+      },
+      {
+        "nome": "Serra Circular 7\"",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Cabo de energia", "Gatilho", "Trava do eixo", "Base/sapata", "Guia paralela"]
+      },
+      {
+        "nome": "Serra Circular 9\"",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Cabo de energia", "Gatilho", "Trava do eixo", "Base/sapata", "Guia paralela"]
+      },
+      {
+        "nome": "Serra Policorte",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Cabo de energia", "Morsa/grampo", "Chave liga/desliga", "Base/estrutura"]
+      }
+    ]
+  },
+  {
+    "categoria": "Esmerilhadeiras",
+    "equipamentos": [
+      {
+        "nome": "Esmerilhadeira 4\"",
+        "itensVerificacao": ["Motor funcionando", "Disco", "Proteção do disco", "Cabo de energia", "Gatilho", "Trava do eixo", "Punho lateral"]
+      },
+      {
+        "nome": "Esmerilhadeira 5\"",
+        "itensVerificacao": ["Motor funcionando", "Disco", "Proteção do disco", "Cabo de energia", "Gatilho", "Trava do eixo", "Punho lateral"]
+      },
+      {
+        "nome": "Esmerilhadeira 7\"",
+        "itensVerificacao": ["Motor funcionando", "Disco", "Proteção do disco", "Cabo de energia", "Gatilho", "Trava do eixo", "Punho lateral"]
+      }
+    ]
+  },
+  {
+    "categoria": "Mangotes Vibradores",
+    "equipamentos": [
+      {
+        "nome": "Mangote Vibrador 25 mm x1,2 m",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      },
+      {
+        "nome": "Mangote Vibrador 25 mm x2,4 m",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      },
+      {
+        "nome": "Mangote Vibrador 25 mm x2,5 m",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      },
+      {
+        "nome": "Mangote Vibrador 35 mm x4,5 m",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      },
+      {
+        "nome": "Mangote Vibrador 35 mm x2,5 m",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      },
+      {
+        "nome": "Mangote Vibrador 35 mm x3,5 m",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      },
+      {
+        "nome": "Mangote Vibrador 45 mm",
+        "itensVerificacao": ["Vibração funcionando", "Mangueira sem furos", "Conexão/engate", "Sem desgaste excessivo"]
+      }
+    ]
+  },
+  {
+    "categoria": "Geradores",
+    "equipamentos": [
+      {
+        "nome": "Moto Gerador 3.500 W",
+        "itensVerificacao": ["Motor funcionando", "Nível de óleo", "Tanque de combustível", "Saídas de energia", "Partida/puxador", "Chave de energia", "Voltímetro", "Disjuntor"]
+      },
+      {
+        "nome": "Moto Gerador 8.000 W",
+        "itensVerificacao": ["Motor funcionando", "Nível de óleo", "Tanque de combustível", "Saídas de energia", "Partida/puxador", "Chave de energia", "Voltímetro", "Disjuntor"]
+      },
+      {
+        "nome": "Moto Gerador 12.000 W",
+        "itensVerificacao": ["Motor funcionando", "Nível de óleo", "Tanque de combustível", "Saídas de energia", "Partida elétrica", "Chave de energia", "Voltímetro", "Disjuntor", "Bateria"]
+      },
+      {
+        "nome": "Moto Gerador 33 kVA",
+        "itensVerificacao": ["Motor funcionando", "Nível de óleo", "Tanque de combustível", "Saídas de energia", "Partida elétrica", "Painel de controle", "Voltímetro", "Disjuntor", "Bateria", "Carenagem"]
+      }
+    ]
+  },
+  {
+    "categoria": "Equipamentos de Pintura",
+    "equipamentos": [
+      {
+        "nome": "Máquina de Pintura Airless",
+        "itensVerificacao": ["Motor/bomba funcionando", "Mangueira de alta pressão", "Pistola", "Bico/ponta", "Filtros", "Cabo de energia", "Válvula de pressão", "Reservatório"]
+      },
+      {
+        "nome": "Compressor de pintura",
+        "itensVerificacao": ["Motor funcionando", "Reservatório de ar", "Mangueira", "Registro de ar", "Manômetro", "Cabo de energia", "Válvula de segurança", "Filtro de ar"]
+      }
+    ]
+  },
+  {
+    "categoria": "Guinchos e Elevação",
+    "equipamentos": [
+      {
+        "nome": "Guincho Girafa Hidráulico",
+        "itensVerificacao": ["Sistema hidráulico", "Lança/braço", "Corrente/cabo", "Gancho", "Rodas/rodízios", "Base/estrutura", "Bomba hidráulica"]
+      },
+      {
+        "nome": "Balde para Guincho 50 L",
+        "itensVerificacao": ["Sem deformações", "Alça/gancho", "Sem furos", "Trava de despejo"]
+      },
+      {
+        "nome": "Sarilho para Elevação em Guincho",
+        "itensVerificacao": ["Cabo de aço", "Manivela/catraca", "Freio", "Estrutura", "Gancho"]
+      }
+    ]
+  },
+  {
+    "categoria": "Ferramentas Elétricas",
+    "equipamentos": [
+      {
+        "nome": "Furadeira Impacto 1/2 750 W",
+        "itensVerificacao": ["Motor funcionando", "Mandril", "Chave do mandril", "Cabo de energia", "Gatilho", "Seletor impacto/rotação", "Maleta/case"]
+      },
+      {
+        "nome": "Parafusadeira/Furadeira 21 V",
+        "itensVerificacao": ["Motor funcionando", "Mandril", "Bateria", "Carregador", "Seletor de torque", "Gatilho", "Maleta/case"]
+      },
+      {
+        "nome": "Fundeira elétrica",
+        "itensVerificacao": ["Motor funcionando", "Broca/fresa", "Cabo de energia", "Gatilho", "Base/guia", "Proteção"]
+      },
+      {
+        "nome": "Pistola Finca Pino",
+        "itensVerificacao": ["Mecanismo de disparo", "Câmara", "Proteção/bico", "Maleta/case", "Sem deformações"]
+      }
+    ]
+  },
+  {
+    "categoria": "Compactação e Vibração",
+    "equipamentos": [
+      {
+        "nome": "Placa Vibratória a Gasolina",
+        "itensVerificacao": ["Motor funcionando", "Nível de óleo", "Placa/base sem trincas", "Sistema de vibração", "Acelerador", "Puxador/guia", "Filtro de ar", "Tanque de combustível"]
+      },
+      {
+        "nome": "Vibrador de concreto",
+        "itensVerificacao": ["Motor funcionando", "Cabo de energia", "Conexão do mangote", "Chave liga/desliga", "Carcaça sem trincas"]
+      }
+    ]
+  },
+  {
+    "categoria": "Cortadoras",
+    "equipamentos": [
+      {
+        "nome": "Cortadora de Piso Elétrica",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Cabo de energia", "Regulagem de profundidade", "Rodas", "Entrada de água", "Chave liga/desliga"]
+      },
+      {
+        "nome": "Cortadora de Piso Gasolina",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Nível de óleo", "Tanque de combustível", "Regulagem de profundidade", "Rodas", "Entrada de água"]
+      },
+      {
+        "nome": "Cortadora de piso manual",
+        "itensVerificacao": ["Riscador/disco", "Guia de corte", "Base/estrutura", "Régua de medição", "Sem deformações"]
+      },
+      {
+        "nome": "Cortadora de cerâmica",
+        "itensVerificacao": ["Motor funcionando", "Disco de corte", "Proteção do disco", "Cabo de energia", "Reservatório de água", "Mesa/base", "Guia de corte"]
+      },
+      {
+        "nome": "Cortadora de Parede",
+        "itensVerificacao": ["Motor funcionando", "Discos de corte", "Proteção dos discos", "Cabo de energia", "Regulagem de profundidade", "Aspirador/coletor de pó", "Gatilho"]
+      }
+    ]
+  },
+  {
+    "categoria": "Outros",
+    "equipamentos": [
+      {
+        "nome": "Soprador térmico",
+        "itensVerificacao": ["Motor funcionando", "Aquecimento", "Bico/bocal", "Cabo de energia", "Seletor de temperatura", "Gatilho"]
+      },
+      {
+        "nome": "Aparalixo",
+        "itensVerificacao": ["Motor funcionando", "Disco/lixa", "Proteção", "Cabo de energia", "Gatilho", "Empunhadura"]
+      },
+      {
+        "nome": "Escada",
+        "itensVerificacao": ["Degraus íntegros", "Travas de segurança", "Pés antiderrapantes", "Sem deformações", "Dobradiças funcionando"]
+      },
+      {
+        "nome": "Carrinho plataforma",
+        "itensVerificacao": ["Rodas girando", "Plataforma sem deformações", "Puxador", "Sem ferrugem excessiva"]
+      },
+      {
+        "nome": "Enceradeira industrial",
+        "itensVerificacao": ["Motor funcionando", "Disco/escova", "Cabo de energia", "Alça/empunhadura", "Rodas de transporte", "Chave liga/desliga"]
+      },
+      {
+        "nome": "Descapador de Parede",
+        "itensVerificacao": ["Motor funcionando", "Lâmina/disco", "Cabo de energia", "Gatilho", "Proteção", "Empunhadura"]
+      },
+      {
+        "nome": "Bomba hidráulica submersa 2\"",
+        "itensVerificacao": ["Motor funcionando", "Saída de água", "Cabo de energia", "Vedações", "Carcaça sem trincas", "Boia (se tiver)"]
+      },
+      {
+        "nome": "Bomba hidráulica submersa 3\"",
+        "itensVerificacao": ["Motor funcionando", "Saída de água", "Cabo de energia", "Vedações", "Carcaça sem trincas", "Boia (se tiver)"]
+      },
+      {
+        "nome": "Paleteira",
+        "itensVerificacao": ["Sistema hidráulico", "Garfos sem deformações", "Rodas/roldanas", "Alavanca de acionamento", "Freio/trava", "Sem vazamento de óleo"]
+      },
+      {
+        "nome": "Plaina",
+        "itensVerificacao": ["Motor funcionando", "Lâminas de corte", "Base/sapata", "Cabo de energia", "Gatilho", "Regulagem de profundidade", "Saco coletor"]
+      }
+    ]
+  }
+]

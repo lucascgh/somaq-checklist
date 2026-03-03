@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Checklist {
+  id                String          @id @default(cuid())
+  createdAt         DateTime        @default(now())
+  dataConferencia   DateTime
+  responsavel       String
+  motorista         String?
+  responsavelLocacao String?
+  cliente           String
+  patrimonio        String
+  equipamento       String
+  categoria         String?
+  itensVerificacao  ChecklistItem[]
+  checklistGeral    ChecklistGeral?
+  observacoes       String?
+  statusFinal       String
+  fotos             Photo[]
+  pdfUrl            String?
+  pdfDriveId        String?
+
+  @@index([cliente])
+  @@index([equipamento])
+  @@index([patrimonio])
+  @@index([dataConferencia])
+  @@index([statusFinal])
+}
+
+model ChecklistItem {
+  id          String    @id @default(cuid())
+  checklist   Checklist @relation(fields: [checklistId], references: [id], onDelete: Cascade)
+  checklistId String
+  nome        String
+  conforme    Boolean   @default(false)
+}
+
+model ChecklistGeral {
+  id                    String    @id @default(cuid())
+  checklist             Checklist @relation(fields: [checklistId], references: [id], onDelete: Cascade)
+  checklistId           String    @unique
+  equipamentoLimpo      Boolean   @default(false)
+  semQuebras            Boolean   @default(false)
+  semPecasFaltantes     Boolean   @default(false)
+  funcionandoCorretamente Boolean @default(false)
+  semSinaisMauUso       Boolean   @default(false)
+}
+
+model Photo {
+  id          String    @id @default(cuid())
+  checklist   Checklist @relation(fields: [checklistId], references: [id], onDelete: Cascade)
+  checklistId String
+  url         String
+  driveId     String?
+  nome        String?
+}
