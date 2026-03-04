@@ -22,10 +22,10 @@ export default function StepItensVerificacao({ formData, onChange }: Props) {
           const eq = cat.equipamentos.find((e) => e.nome === formData.equipamento);
           if (eq) {
             setItens(eq.itensVerificacao);
-            // Initialize all items as checked (conforme) by default
+            // Initialize all items as unchecked — user must mark conformes
             const initial: Record<string, boolean> = {};
             eq.itensVerificacao.forEach((item) => {
-              initial[item] = formData.itensVerificacao[item] ?? true;
+              initial[item] = formData.itensVerificacao[item] ?? false;
             });
             onChange({ itensVerificacao: initial });
             break;

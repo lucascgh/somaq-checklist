@@ -77,32 +77,33 @@ export default function WizardForm() {
     }
   };
 
-  const fileToBase64 = (file: File): Promise<string> => {
+  const fileToBase64Clean = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result as string);
+      reader.onload = () => {
+        const result = reader.result as string;
+        // Strip data URI prefix, keep only base64
+        resolve(result.split(",")[1] || result);
+      };
       reader.onerror = reject;
     });
   };
 
+  const [submitStatus, setSubmitStatus] = useState("");
+
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      // Generate PDF as base64
+      // Step 1: Generate PDF as clean base64
+      setSubmitStatus("Gerando PDF...");
       const pdf = generateChecklistPDF(formData);
-      const pdfBlob = pdf.output("blob");
-      const pdfBase64 = pdf.output("datauristring");
+      const pdfDataUri = pdf.output("datauristring");
+      const pdfBase64 = pdfDataUri.split(",")[1] || pdfDataUri;
       const pdfFileName = `Checklist_${formData.equipamento.replace(/[^a-zA-Z0-9]/g, "_")}_${formData.patrimonio}_${formData.dataConferencia}.pdf`;
 
-      // Convert photos to base64
-      const fotosBase64 = [];
-      for (const foto of formData.fotos) {
-        const base64 = await fileToBase64(foto.file);
-        fotosBase64.push({ base64 });
-      }
-
-      // Save to API (sends to Google Drive via Apps Script)
+      // Step 2: Submit checklist data + PDF (without photos)
+      setSubmitStatus("Salvando no Drive...");
       const res = await fetch("/api/submit-checklist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -121,27 +122,44 @@ export default function WizardForm() {
           checklistGeral: formData.checklistGeral,
           pdfBase64,
           pdfFileName,
-          fotos: fotosBase64,
+          fotos: [],
         }),
       });
 
-      if (res.ok) {
-        // Download PDF locally too
-        const url = URL.createObjectURL(pdfBlob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = pdfFileName;
-        a.click();
-        URL.revokeObjectURL(url);
-
-        router.push("/sucesso");
-      } else {
-        alert("Erro ao enviar checklist. Tente novamente.");
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        alert("Erro ao enviar checklist: " + (errData.error || "Tente novamente."));
+        return;
       }
-    } catch {
+
+      const result = await res.json();
+      const checklistId = result.id;
+
+      // Step 3: Upload photos one by one (if any)
+      if (formData.fotos.length > 0 && checklistId) {
+        for (let i = 0; i < formData.fotos.length; i++) {
+          setSubmitStatus(`Enviando foto ${i + 1}/${formData.fotos.length}...`);
+          const base64 = await fileToBase64Clean(formData.fotos[i].file);
+          await fetch("/api/upload-photo", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              checklistId,
+              base64,
+              fileName: `Foto_${formData.patrimonio}_${i + 1}.jpg`,
+            }),
+          });
+        }
+      }
+
+      // PDF saved to Drive only — no local download
+      router.push("/sucesso");
+    } catch (err) {
+      console.error("Submit error:", err);
       alert("Erro de conexão. Tente novamente.");
     } finally {
       setSubmitting(false);
+      setSubmitStatus("");
     }
   };
 
@@ -254,7 +272,7 @@ export default function WizardForm() {
             ) : (
               <Send className="w-5 h-5 mr-2" />
             )}
-            {submitting ? "Enviando..." : "Confirmar e Enviar"}
+            {submitting ? (submitStatus || "Enviando...") : "Confirmar e Enviar"}
           </Button>
         )}
       </div>

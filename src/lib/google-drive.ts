@@ -46,8 +46,13 @@ export async function submitChecklistToDrive(data: {
       redirect: "follow",
     });
 
-    const result = await response.json();
-    return result;
+    const text = await response.text();
+    try {
+      return JSON.parse(text);
+    } catch {
+      console.error("Apps Script response is not JSON:", text.substring(0, 500));
+      return { success: false, error: "Resposta inválida do Apps Script" };
+    }
   } catch (error) {
     console.error("Drive submit failed:", error);
     return { success: false, error: String(error) };
