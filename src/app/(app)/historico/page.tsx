@@ -13,6 +13,8 @@ import {
   Eye,
   CheckCircle2,
   XCircle,
+  FileText,
+  Image as ImageIcon,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -449,27 +451,54 @@ export default function HistoricoPage() {
                   </div>
                 )}
 
+                {/* PDF do Drive */}
+                {selectedChecklist.pdfUrl && (
+                  <div>
+                    <a
+                      href={selectedChecklist.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 p-3 bg-[#1B0F8E]/5 rounded-lg border border-[#1B0F8E]/20 hover:bg-[#1B0F8E]/10 transition-colors"
+                    >
+                      <FileText className="w-5 h-5 text-[#1B0F8E]" />
+                      <span className="text-sm font-medium text-[#1B0F8E]">
+                        Ver PDF no Google Drive
+                      </span>
+                    </a>
+                  </div>
+                )}
+
                 {/* Fotos */}
                 {selectedChecklist.fotos.length > 0 && (
                   <div>
-                    <h3 className="text-sm font-semibold mb-2">Fotos</h3>
+                    <h3 className="text-sm font-semibold mb-2 flex items-center gap-1.5">
+                      <ImageIcon className="w-4 h-4" />
+                      Fotos ({selectedChecklist.fotos.length})
+                    </h3>
                     <div className="grid grid-cols-3 gap-2">
-                      {selectedChecklist.fotos.map((foto, i) => (
-                        <a
-                          key={i}
-                          href={foto.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block aspect-square rounded-lg bg-gray-100 overflow-hidden"
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={foto.url}
-                            alt={foto.nome || `Foto ${i + 1}`}
-                            className="w-full h-full object-cover"
-                          />
-                        </a>
-                      ))}
+                      {selectedChecklist.fotos.map((foto, i) => {
+                        const thumbnailUrl = foto.driveId
+                          ? `https://drive.google.com/thumbnail?id=${foto.driveId}&sz=w400`
+                          : foto.url;
+                        const fullUrl = foto.fullUrl || foto.url;
+                        return (
+                          <a
+                            key={i}
+                            href={fullUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block aspect-square rounded-lg bg-gray-100 overflow-hidden border hover:border-[#1B0F8E] transition-colors"
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={thumbnailUrl}
+                              alt={foto.nome || `Foto ${i + 1}`}
+                              className="w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                            />
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 )}

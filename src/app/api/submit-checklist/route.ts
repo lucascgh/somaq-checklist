@@ -1,9 +1,39 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/database";
+import { submitChecklistToDrive, isAppsScriptConfigured } from "@/lib/google-drive";
 
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
+
+    // Try Google Drive (Apps Script) first
+    if (isAppsScriptConfigured()) {
+      const result = await submitChecklistToDrive({
+        dataConferencia: data.dataConferencia,
+        responsavel: data.responsavel,
+        motorista: data.motorista || "",
+        responsavelLocacao: data.responsavelLocacao || "",
+        cliente: data.cliente,
+        patrimonio: data.patrimonio,
+        equipamento: data.equipamento,
+        categoria: data.categoria || "",
+        observacoes: data.observacoes || "",
+        statusFinal: data.statusFinal,
+        itensVerificacao: data.itensVerificacao || {},
+        checklistGeral: data.checklistGeral || {},
+        pdfBase64: data.pdfBase64 || "",
+        pdfFileName: data.pdfFileName || "",
+        fotos: data.fotos || [],
+      });
+
+      if (result.success) {
+        return NextResponse.json(result);
+      }
+
+      console.error("Apps Script error, trying local DB:", result.error);
+    }
+
+    // Fallback to local Prisma DB
+    const { prisma } = await import("@/lib/database");
 
     const checklist = await prisma.checklist.create({
       data: {
@@ -50,7 +80,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    return NextResponse.json({ success: true, checklist });
+    return NextResponse.json({ success: true, id: checklist.id, checklist });
   } catch (error) {
     console.error("Erro ao salvar checklist:", error);
     return NextResponse.json(

@@ -87,6 +87,7 @@ export interface ChecklistRecord {
   observacoes: string | null;
   statusFinal: string;
   pdfUrl: string | null;
+  pdfDriveId?: string | null;
   itensVerificacao: { nome: string; conforme: boolean }[];
   checklistGeral: {
     equipamentoLimpo: boolean;
@@ -95,7 +96,7 @@ export interface ChecklistRecord {
     funcionandoCorretamente: boolean;
     semSinaisMauUso: boolean;
   } | null;
-  fotos: { url: string; nome: string | null }[];
+  fotos: { url: string; driveId?: string | null; nome: string | null; fullUrl?: string }[];
 }
 
 export interface DashboardData {

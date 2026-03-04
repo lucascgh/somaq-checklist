@@ -1,7 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/database";
+import { getDashboardFromDrive, isAppsScriptConfigured } from "@/lib/google-drive";
 
 export async function GET(request: NextRequest) {
+  // Try Google Drive (Apps Script) first
+  if (isAppsScriptConfigured()) {
+    const result = await getDashboardFromDrive();
+    if (result) {
+      return NextResponse.json(result);
+    }
+  }
+
+  // Fallback to local Prisma DB
+  const { prisma } = await import("@/lib/database");
+
   const { searchParams } = new URL(request.url);
   const startDate = searchParams.get("startDate");
   const endDate = searchParams.get("endDate");

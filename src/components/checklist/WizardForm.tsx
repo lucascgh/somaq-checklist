@@ -77,27 +77,56 @@ export default function WizardForm() {
     }
   };
 
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = reject;
+    });
+  };
+
   const handleSubmit = async () => {
     setSubmitting(true);
     try {
-      // Generate PDF
+      // Generate PDF as base64
       const pdf = generateChecklistPDF(formData);
       const pdfBlob = pdf.output("blob");
+      const pdfBase64 = pdf.output("datauristring");
       const pdfFileName = `Checklist_${formData.equipamento.replace(/[^a-zA-Z0-9]/g, "_")}_${formData.patrimonio}_${formData.dataConferencia}.pdf`;
 
-      // Save to API
+      // Convert photos to base64
+      const fotosBase64 = [];
+      for (const foto of formData.fotos) {
+        const base64 = await fileToBase64(foto.file);
+        fotosBase64.push({ base64 });
+      }
+
+      // Save to API (sends to Google Drive via Apps Script)
       const res = await fetch("/api/submit-checklist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
-          fotos: undefined,
-          fotosUrls: [],
+          responsavel: formData.responsavel,
+          motorista: formData.motorista,
+          responsavelLocacao: formData.responsavelLocacao,
+          cliente: formData.cliente,
+          patrimonio: formData.patrimonio,
+          dataConferencia: formData.dataConferencia,
+          equipamento: formData.equipamento,
+          categoria: formData.categoria,
+          observacoes: formData.observacoes,
+          statusFinal: formData.statusFinal,
+          itensVerificacao: formData.itensVerificacao,
+          checklistGeral: formData.checklistGeral,
+          pdfBase64,
+          pdfFileName,
+          fotos: fotosBase64,
         }),
       });
 
       if (res.ok) {
-        // Download PDF locally
+        // Download PDF locally too
         const url = URL.createObjectURL(pdfBlob);
         const a = document.createElement("a");
         a.href = url;
